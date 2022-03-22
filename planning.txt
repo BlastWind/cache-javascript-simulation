@@ -1,0 +1,41 @@
+// Fetching using getBlock is slow
+
+// 2 components: Cache and disk
+
+/*
+Cache C = S x E x B (S sets, E number of numLines of cache, B bytes per block)
+
+Cache: 
+
+  S = 2^s sets 
+  E numLines 
+  B = 2^b bytes per cache block 
+  t tag bits 
+  1 valid bit
+
+  One must specify the disk address mechanism by specifying the
+  - address space (must be power of 2)
+
+  One must specify the Cache module by specifying the 
+  - s = number of set bits 
+  - E = number of numLines per set
+  - b = number of block offset
+
+
+  The double for loops are trying to iterate through 
+int a[M][N] = [[1, 2, 3], [4, 3, 2], [2, 4, 3]]; 
+for(row in a)
+  for(item in row)
+    CPU.addToDisk(a)
+
+// => disk.appendBlock(a) => arr[memoryPointer] = a; 
+
+int sumarrayrows(int a[M][N])
+{
+  int i, j, sum = 0;
+  for (i = 0; i < M; i++)
+    for (j = 0; j < N; j++)
+      sum += CPU.getBlock(i*M.length + j)
+      return sum;
+}
+*/
